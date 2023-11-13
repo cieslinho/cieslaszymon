@@ -6,7 +6,7 @@
 	padding: 0;
 }
 
-*ul {
+*li {
 	list-style-type: none;
 }
 
@@ -14,7 +14,32 @@
 	text-decoration: none;
 }
 
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	outline: none;
+	border: none;
+	background: none;
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
 ::selection {
+	background-color: $cta;
+	color: $black;
 }
 
 html {
@@ -23,6 +48,8 @@ html {
 }
 
 body {
+	background-color: $dark-white;
+	color: $black;
 	font-size: 1.6rem;
 	font-family: 'Poppins', sans-serif;
 }

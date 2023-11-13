@@ -69,11 +69,16 @@ add_theme_support('post-thumbnails', array(
     }
   
 
-    function add_additional_class($classes, $item, $args){
-      if(isset($args->add_li_class)){
-          $classes[] = $args->add_li_class;
+    function li_menu_class($classes, $item, $args) {
+      if($args->theme_location == 'cieslinho_main_menu') {
+        $classes[] = 'nav__menu-item';
       }
       return $classes;
-  }
-  
-  add_filter('nav_menu_css_class', 'add_additional_class', 1, 3);
+    }
+    add_filter('nav_menu_css_class','li_menu_class',1,3);
+
+    function a_menu_class($atts) {
+      $atts['class'] = "nav__menu-link";
+      return $atts;
+    }
+    add_filter( 'nav_menu_link_attributes', 'a_menu_class');
